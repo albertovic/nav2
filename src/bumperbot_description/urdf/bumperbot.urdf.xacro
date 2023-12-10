@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="bumperbot">
+    
+    <!-- This is the first link of the robot, the parent. It will be the interface between the robot and the environment -->
+    <link name="base_footprint"/>
+
+    <link name="base_link">
+        <visual>
+            <!-- To specify the origin of the mesh -->
+            <!-- The rpy (roll pitch yaw) property represents the orientation of the mesh with respect to the base link  -->
+            <!-- The xyz property describes the mesh position-->
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://bumperbot_description/meshes/base_link.STL"/>
+            </geometry>
+        </visual>
+
+    </link>
+
+</robot>
