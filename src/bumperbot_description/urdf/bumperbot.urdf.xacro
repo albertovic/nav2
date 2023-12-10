@@ -9,7 +9,7 @@
         <visual>
             <!-- To specify the origin of the mesh -->
             <!-- The rpy (roll pitch yaw) property represents the orientation of the mesh with respect to the base link  -->
-            <!-- The xyz property describes the mesh position-->
+            <!-- The xyz property describes the mesh position respect to the base link-->
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
                 <mesh filename="package://bumperbot_description/meshes/base_link.STL"/>
@@ -17,5 +17,14 @@
         </visual>
 
     </link>
+
+    <joint name="base_joint" type="fixed">
+        <!-- We will specify the parent and child link -->
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <!-- This states the relative position of the two links (parent and child) -->
+        <!-- We can take this info directly from the CAD model -->
+        <origin rpy="0 0 0" xyz="0 0 0.033"/>
+    </joint>
 
 </robot>
